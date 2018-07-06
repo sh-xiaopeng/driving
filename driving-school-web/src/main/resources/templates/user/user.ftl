@@ -5,7 +5,7 @@
     <title>Spring boot 测试页面</title>
 </head>
 <body>
-	<h1>Spring boot web项目访问页面</h1>
+	<h1>Spring boot web项目访问页面${userName}</h1>
 	<table>
 		<tr style="border:1px solid #0094ff;">
 			<td style="border:1px solid #0094ff;">姓名</td>
