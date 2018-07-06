@@ -11,6 +11,8 @@
     <frame src="/driving-school/index" name="rightFrame" id="rightFrame" title="rightFrame" />
   </frameset>
 </frameset>
-<noframes><body>
-</body></noframes>
+<noframes>
+<body>
+</body>
+</noframes>
 </html>
