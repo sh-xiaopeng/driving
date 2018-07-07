@@ -10,7 +10,7 @@ public interface SchoolUserService {
 	 * @param record
 	 * @return
 	 */
-	public Page<SchoolUser> querySchoolUserInfo(int pageNum,int pageSize,SchoolUser record);
+	public Page<SchoolUser> querySchoolUserInfoList(int pageNum,int pageSize,SchoolUser record);
 	
 	/**
 	 * @author pengcheng.yang
@@ -18,7 +18,7 @@ public interface SchoolUserService {
 	 * @param userId
 	 * @return
 	 */
-	public SchoolUser querySchoolUserINfoByUserId(Integer userId);
+	public SchoolUser querySchoolUserInfoByUserId(Integer userId);
 	
 	/**
 	 * @author yangpengcheng

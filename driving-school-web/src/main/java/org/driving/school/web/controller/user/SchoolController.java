@@ -1,4 +1,4 @@
-package org.driving.school.web.controller.menu;
+package org.driving.school.web.controller.user;
 
 import org.driving.school.dal.model.SchoolUser;
 import org.driving.school.service.user.SchoolUserService;
@@ -15,21 +15,21 @@ import com.github.pagehelper.Page;
  *
  */
 @Controller
-public class StudentController {
+public class SchoolController {
 	
 	@Autowired
 	private SchoolUserService schoolUserService;
 	
 	@RequestMapping("/queryStudentInfoList")
 	public String queryStudentInfoList(Model model,Integer pageNum,Integer pageSize,SchoolUser record) {
-		Page<SchoolUser> schoolUser = schoolUserService.querySchoolUserInfo(pageNum, pageSize,record);
+		Page<SchoolUser> schoolUser = schoolUserService.querySchoolUserInfoList(pageNum, pageSize,record);
 		model.addAttribute("schoolUserList", schoolUser.toPageInfo());
 		return "/home/right";
 	}
 	
 	@RequestMapping("/querStudentInfoByUserId")
 	public String querStudentInfoByUserId(Model model,Integer userId) {
-		SchoolUser schoolUser = schoolUserService.querySchoolUserINfoByUserId(userId);
+		SchoolUser schoolUser = schoolUserService.querySchoolUserInfoByUserId(userId);
 		model.addAttribute("schoolUser", schoolUser);
 		return "";
 	}

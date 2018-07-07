@@ -3,6 +3,8 @@ package org.driving.school.service.user.impl;
 import org.driving.school.biz.user.SchoolUserBiz;
 import org.driving.school.dal.model.SchoolUser;
 import org.driving.school.service.user.SchoolUserService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -16,6 +18,8 @@ import com.github.pagehelper.Page;
 @Service
 public class SchoolUserServiceImpl implements SchoolUserService {
 	
+	private Logger logger = LoggerFactory.getLogger(SchoolUserServiceImpl.class);
+	
 	@Autowired
 	private SchoolUserBiz schoolUserBiz;
 	
@@ -26,8 +30,8 @@ public class SchoolUserServiceImpl implements SchoolUserService {
 	 * @return
 	 */
 	@Override
-	public Page<SchoolUser> querySchoolUserInfo(int pageNum, int pageSize, SchoolUser record) {
-		return schoolUserBiz.querySchoolUserInfo(pageNum, pageSize, record);
+	public Page<SchoolUser> querySchoolUserInfoList(int pageNum, int pageSize, SchoolUser record) {
+		return schoolUserBiz.querySchoolUserInfoList(pageNum, pageSize, record);
 	}
 	
 	/**
@@ -37,7 +41,7 @@ public class SchoolUserServiceImpl implements SchoolUserService {
 	 * @return
 	 */
 	@Override
-	public SchoolUser querySchoolUserINfoByUserId(Integer userId) {
+	public SchoolUser querySchoolUserInfoByUserId(Integer userId) {
 		return schoolUserBiz.selectByPrimaryKey(userId);
 	}
 	
@@ -49,6 +53,7 @@ public class SchoolUserServiceImpl implements SchoolUserService {
 	 */
 	@Override
 	public boolean insertSchoolUserInfo(SchoolUser record) {
+		logger.info("插入学员信息：{}",record);
 		int result = schoolUserBiz.insertSelective(record);
 		if (result == 1) {
 			return true;

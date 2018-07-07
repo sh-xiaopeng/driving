@@ -16,6 +16,6 @@ public interface SchoolUserBiz {
 
     int updateByPrimaryKey(SchoolUser record);
     
-    Page<SchoolUser> querySchoolUserInfo(int pageNum,int pageSize,SchoolUser record);
+    Page<SchoolUser> querySchoolUserInfoList(int pageNum,int pageSize,SchoolUser record);
     
 }

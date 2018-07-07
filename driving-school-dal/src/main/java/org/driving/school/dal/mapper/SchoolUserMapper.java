@@ -17,7 +17,7 @@ public interface SchoolUserMapper {
 
     int updateByPrimaryKey(SchoolUser record);
     
-    Page<SchoolUser> querySchoolUserInfo(int pageNum, int pageSize);
+    Page<SchoolUser> querySchoolUserInfoList(SchoolUser record);
     
 	public boolean insertSchoolUserInfo(SchoolUser record);
 

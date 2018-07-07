@@ -82,4 +82,12 @@ public class SchoolUser {
     public void setCreateTime(Date createTime) {
         this.createTime = createTime;
     }
+
+	@Override
+	public String toString() {
+		return "SchoolUser [userId=" + userId + ", userName=" + userName + ", email=" + email + ", pwd=" + pwd
+				+ ", sex=" + sex + ", cancelFlag=" + cancelFlag + ", updateTime=" + updateTime + ", createTime="
+				+ createTime + "]";
+	}
+    
 }

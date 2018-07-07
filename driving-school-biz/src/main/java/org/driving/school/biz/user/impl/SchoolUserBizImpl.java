@@ -46,10 +46,10 @@ public class SchoolUserBizImpl implements SchoolUserBiz {
 	}
 
 	@Override
-	public Page<SchoolUser> querySchoolUserInfo(int pageNum, int pageSize, SchoolUser record) {
+	public Page<SchoolUser> querySchoolUserInfoList(int pageNum, int pageSize, SchoolUser record) {
 		//github分页插件
 		PageHelper.startPage(pageNum, pageSize);
-		return schoolUserMapper.querySchoolUserInfo(pageNum, pageSize);
+		return schoolUserMapper.querySchoolUserInfoList(record);
 	}
 	
 
