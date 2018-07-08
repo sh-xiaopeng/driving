@@ -22,7 +22,7 @@ public class SchoolController {
 	
 	@RequestMapping("/queryStudentInfoList")
 	public String queryStudentInfoList(Model model,Integer pageNum,Integer pageSize,SchoolUser record) {
-		Page<SchoolUser> schoolUser = schoolUserService.querySchoolUserInfoList(pageNum, pageSize,record);
+		Page<SchoolUser> schoolUser = schoolUserService.querySchoolUserInfoList(pageNum == null?1:pageNum,pageSize == null?10:pageSize,record);
 		model.addAttribute("schoolUserList", schoolUser.toPageInfo());
 		return "/home/right";
 	}
