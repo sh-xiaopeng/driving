@@ -1,4 +1,4 @@
-package org.driving.school.test.user;
+package org.driving.school.user;
 
 import java.util.Date;
 import java.util.List;

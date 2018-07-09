@@ -7,6 +7,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class LoginController {
 	
+	@RequestMapping("/")
+	public String loginIndex(){
+		return "/home/main";
+	}
+	
 	@RequestMapping("/login")
 	public String userLogin(Model model) {
 		model.addAttribute("userName", "杨鹏程");
